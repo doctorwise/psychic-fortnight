@@ -1,0 +1,8 @@
+# Makefile
+
+# defaults
+SIM ?= icarus
+TOPLEVEL_LANG ?= verilog
+VERILOG_SOURCES += $(PWD)/../hdl/sv/*
+
+include .Makefile_common

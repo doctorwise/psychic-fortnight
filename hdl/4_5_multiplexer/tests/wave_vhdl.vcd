@@ -1,0 +1,29 @@
+$date
+  Fri Sep  9 21:47:43 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module mux2 $end
+$var reg 4 ! d0[3:0] $end
+$var reg 4 " d1[3:0] $end
+$var reg 1 # s $end
+$var reg 4 $ y[3:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+b0001 !
+b0010 "
+1#
+b0010 $
+#1000000
+0#
+b0001 $
+#2000000

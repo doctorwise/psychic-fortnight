@@ -34,6 +34,11 @@ Example:
                          |
                          |____ test.py (the top-level cocotb test)
 
+
+## Running tests
+
+You can run all the tests at once with the top level command `./runAllTests.sh`.
+
 ## Conclusion
 
 Hopefully, these examples will provide you with an easy means of getting started working 

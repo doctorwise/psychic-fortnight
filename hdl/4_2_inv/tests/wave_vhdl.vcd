@@ -1,5 +1,5 @@
 $date
-  Sun Sep 18 20:50:51 2022
+  Sun Sep 18 20:50:30 2022
 $end
 $version
   GHDL v0
@@ -11,14 +11,12 @@ $scope module standard $end
 $upscope $end
 $scope module std_logic_1164 $end
 $upscope $end
-$scope module tristate $end
-$var reg 4 ! a[3:0] $end
-$var reg 1 " en $end
-$var reg 4 # y[3:0] $end
+$scope module inv $end
+$var reg 1 ! a $end
+$var reg 1 " y $end
 $upscope $end
 $enddefinitions $end
 #0
-b1111 !
-0"
-bZZZZ #
+0!
+1"
 #1000000

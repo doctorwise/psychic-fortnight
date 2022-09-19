@@ -1,5 +1,5 @@
 $date
-  Sun Sep 18 20:50:47 2022
+  Sun Sep 18 20:50:27 2022
 $end
 $version
   GHDL v0
@@ -11,22 +11,37 @@ $scope module standard $end
 $upscope $end
 $scope module std_logic_1164 $end
 $upscope $end
-$scope module fulladder $end
+$scope module sillyfunction $end
 $var reg 1 ! a $end
 $var reg 1 " b $end
-$var reg 1 # cin $end
-$var reg 1 $ s $end
-$var reg 1 % cout $end
-$var reg 1 & p $end
-$var reg 1 ' g $end
+$var reg 1 # c $end
+$var reg 1 $ y $end
 $upscope $end
 $enddefinitions $end
 #0
 0!
 0"
 0#
-0$
-0%
-0&
-0'
+1$
 #1000000
+1#
+0$
+#2000000
+1"
+0#
+#3000000
+1#
+#4000000
+1!
+0"
+0#
+1$
+#5000000
+1#
+#6000000
+1"
+0#
+0$
+#7000000
+1#
+#8000000

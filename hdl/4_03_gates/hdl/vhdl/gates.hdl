@@ -1,8 +1,9 @@
+-- needed for STD_LOGIC_VECTOR
 library IEEE; use IEEE.STD_LOGIC_1164.all;
 
 entity gates is
 	port (
-		a, b: in STD_LOGIC_VECTOR(3 downto 0);
+		a, b:               in  STD_LOGIC_VECTOR(3 downto 0);
 		y1, y2, y3, y4, y5: out STD_LOGIC_VECTOR(3 downto 0)
 	);
 end;

@@ -2,7 +2,6 @@ from model import model
 
 import cocotb
 from cocotb.triggers import Timer
-from cocotb.types import Logic
 
 @cocotb.test()
 async def test4_1(dut):
@@ -17,4 +16,5 @@ async def test4_1(dut):
             for c_val in values:
                 dut.c.value = c_val
                 await Timer(1, units="ns")
-                assert dut.y.value == model(a=a_val, b=b_val, c=c_val), f"HDL result incorrect: {dut.y.value} vs {model(a_val, b_val, c_val)}"
+                assert dut.y.value == model(a=a_val, b=b_val, c=c_val), \
+                 f"HDL result incorrect: {dut.y.value} vs {model(a_val, b_val, c_val)}"

@@ -6,6 +6,7 @@ from cocotb.types import LogicArray
 
 @cocotb.test()
 async def test4_10(dut):
+
     dut.a.value = LogicArray("1111");
     for enValue in range(1):
         dut.en.value = enValue;

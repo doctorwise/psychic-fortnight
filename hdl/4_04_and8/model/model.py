@@ -1,5 +1,10 @@
 from typing import Tuple
+from cocotb.types import Logic
+from cocotb.types import LogicArray
 
-def model(zero: bool, one: bool, two: bool, three: bool, four: bool, five: bool, six: bool, seven: bool) -> bool:
+def model(a: LogicArray) -> Logic:
     """model of 4_4 gates"""
-    return zero and one and two and three and four and five and six and seven;
+    result = True
+    for idx in range(len(a)):
+        result = result and a[idx]
+    return result;

@@ -1,7 +1,7 @@
 module and8 (
-		input	logic[7:0] a,
-		output	logic	   b
-	);
+  input	  logic[7:0]  a,
+  output	logic	      b
+);
 
 	assign y = &a;
 

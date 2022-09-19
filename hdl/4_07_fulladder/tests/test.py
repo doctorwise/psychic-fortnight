@@ -4,7 +4,7 @@ import cocotb
 from cocotb.triggers import Timer
 
 @cocotb.test()
-async def test4_67(dut):
+async def test4_7(dut):
     for aValue in range(1):
         dut.a.value = aValue;
         for bValue in range(1):

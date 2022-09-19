@@ -1,5 +1,6 @@
-from cocotb.types import Logic
+from cocotb.types import LogicArray
 
-def model(a: Logic) -> Logic:
+def model(a: LogicArray) -> LogicArray:
     """model of 4_2 inv"""
-    return not a;
+    # note that here we will use the bitwise ~ as opposed to not
+    return ~a;

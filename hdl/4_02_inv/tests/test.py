@@ -5,8 +5,12 @@ from cocotb.triggers import Timer
 
 @cocotb.test()
 async def test4_2(dut):
-    values = [0, 1]
-    for a_val in values:
+
+    # note that here, instead of manually setting the values in the LogicArray,
+    # we iterate through integers that can be represented via a 4-bit
+    # unsigned integer representation
+    for a_val in range(2**4):
         dut.a.value = a_val
         await Timer(1, units="ns")
-        assert dut.y.value == model(a_val), f"HDL result incorrect: {dut.y.value} vs {model(a_val)}"
+        assert str(dut.y.value) == str(model(dut.a.value)), \
+            f"HDL result incorrect: {dut.y.value.binstr} vs {model(dut.a.value)}"

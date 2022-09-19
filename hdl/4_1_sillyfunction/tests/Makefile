@@ -1,4 +1,1 @@
-.PHONY: all
-
-all:
-	@./.build.sh
+../../.common/Makefile

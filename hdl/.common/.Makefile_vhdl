@@ -1,0 +1,9 @@
+# Makefile
+
+# defaults
+SIM ?= ghdl
+SIM_ARGS+=--vcd=wave_vhdl.vcd
+TOPLEVEL_LANG ?= vhdl
+VHDL_SOURCES += $(PWD)/../hdl/vhdl/*
+
+include .Makefile_common

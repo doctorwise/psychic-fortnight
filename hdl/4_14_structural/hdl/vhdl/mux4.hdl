@@ -8,7 +8,8 @@ entity mux4 is
 	);
 end;
 
-architecture synth of mux4 is
+-- we can emphasize that this structural in scope by naming it struct
+architecture struct of mux4 is
   -- Note that here we need to (re)describe the interface of the components
   -- that we will be using. Must match the entity declaration given in some
   -- vhd file we've included

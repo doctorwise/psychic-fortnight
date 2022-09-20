@@ -23,11 +23,13 @@ begin
     end if;
   end process;
 
-  -- alternative VHDL idiom for a flip-flop
-  --process (clk) begin
-  --  if clk'event and clk='1' then
-  --    q <= d;
-  --  end if;
-  --end process;
+  -- alternative VHDL idiom for a flip-flop (hidden inside a 2008 block comment)
+  /*
+  process (clk) begin
+    if clk'event and clk='1' then
+      q <= d;
+    end if;
+  end process;
+  */
 
 end;

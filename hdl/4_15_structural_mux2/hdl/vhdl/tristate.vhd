@@ -1,1 +1,1 @@
-../../../4_10_tristate/hdl/vhdl/tristate.hdl
+../../../4_10_tristate/hdl/vhdl/tristate.vhd

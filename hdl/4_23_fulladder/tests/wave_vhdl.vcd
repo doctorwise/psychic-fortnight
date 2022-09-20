@@ -1,5 +1,5 @@
 $date
-  Tue Sep 20 00:19:26 2022
+  Tue Sep 20 00:21:26 2022
 $end
 $version
   GHDL v0
@@ -19,8 +19,6 @@ $var reg 1 " b $end
 $var reg 1 # cin $end
 $var reg 1 $ s $end
 $var reg 1 % cout $end
-$var reg 1 & p $end
-$var reg 1 ' g $end
 $upscope $end
 $enddefinitions $end
 #0
@@ -29,16 +27,12 @@ $enddefinitions $end
 0#
 0$
 0%
-0&
-0'
 #1000000
 1#
 1$
 #2000000
 1"
 0#
-1$
-1&
 #3000000
 1#
 0$
@@ -56,10 +50,6 @@ $enddefinitions $end
 #6000000
 1"
 0#
-0$
-1%
-0&
-1'
 #7000000
 1#
 1$

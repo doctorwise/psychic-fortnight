@@ -5,7 +5,7 @@ from cocotb.triggers import Timer
 from cocotb.types import Logic, LogicArray, Range
 
 @cocotb.test()
-async def test4_14(dut):
+async def test4_15(dut):
     for d0Val in range(2**4):
         for d1Val in range(2**4):
             for sVal in range(2):

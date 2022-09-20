@@ -1,0 +1,117 @@
+$date
+	Mon Sep 19 21:33:50 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module example $end
+$var wire 1 ! a $end
+$upscope $end
+$scope module example $end
+$var wire 1 " b $end
+$upscope $end
+$scope module example $end
+$var wire 1 # c $end
+$upscope $end
+$scope module example $end
+$var wire 1 $ ab $end
+$upscope $end
+$scope module example $end
+$var wire 1 % bb $end
+$upscope $end
+$scope module example $end
+$var wire 1 & cb $end
+$upscope $end
+$scope module example $end
+$var wire 1 ' n1 $end
+$upscope $end
+$scope module example $end
+$var wire 1 ( n2 $end
+$upscope $end
+$scope module example $end
+$var wire 1 ) n3 $end
+$upscope $end
+$scope module example $end
+$var wire 1 * y $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x*
+x)
+x(
+x'
+x&
+x%
+x$
+0#
+0"
+0!
+$end
+#1000
+1$
+1%
+1&
+#2000
+0(
+0)
+#3000
+1'
+#7000
+1*
+#10000
+1#
+#11000
+0&
+#13000
+0'
+#17000
+0*
+#20000
+1"
+0#
+#21000
+0%
+1&
+#30000
+1#
+#31000
+0&
+#40000
+1!
+0"
+0#
+#41000
+0$
+1%
+1&
+#43000
+1(
+#47000
+1*
+#50000
+1#
+#51000
+0&
+#52000
+1)
+#53000
+0(
+#60000
+1"
+0#
+#61000
+0%
+1&
+#62000
+0)
+#66000
+0*
+#70000
+1#
+#71000
+0&
+#80001

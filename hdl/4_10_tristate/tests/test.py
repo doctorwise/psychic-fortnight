@@ -12,5 +12,5 @@ async def test4_10(dut):
         dut.en.value = enValue;
         await Timer(1, units="ns")
         y = model(dut.a.value, dut.en.value);
-        assert(dut.y.value.binstr == y.binstr, f"HDL result incorrect: {dut.y.value.binstr} vs {y.binstr}")
+        assert dut.y.value.binstr == y.binstr, f"HDL result incorrect: {dut.y.value.binstr} vs {y.binstr}"
 

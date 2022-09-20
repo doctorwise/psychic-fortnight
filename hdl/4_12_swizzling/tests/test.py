@@ -8,5 +8,5 @@ from cocotb.types import LogicArray
 async def test4_12(dut):
     await Timer(1, units="ns")
     y = model();
-    assert(dut.y.value.binstr == y.binstr, f"HDL result incorrect: {dut.y.value.binstr} vs {y.binstr}")
+    assert dut.y.value.binstr == y.binstr, f"HDL result incorrect: {dut.y.value.binstr} vs {y.binstr}"
 

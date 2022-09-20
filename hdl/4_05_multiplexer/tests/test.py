@@ -10,9 +10,9 @@ async def test4_5(dut):
     dut.s.value = 1;
     await Timer(1, units="ns")
     out = model(dut.s.value, dut.d0.value, dut.d1.value);
-    assert(dut.y.value == out, f"HDL result incorrect: {dut.y.value} vs {out}")
+    assert dut.y.value == out, f"HDL result incorrect: {dut.y.value} vs {out}"
     dut.s.value = 0;
     await Timer(1, units="ns")
     out = model(dut.s.value, dut.d0.value, dut.d1.value);
-    assert(dut.y.value == out, f"HDL result incorrect: {dut.y.value} vs {out}")
+    assert dut.y.value == out, f"HDL result incorrect: {dut.y.value} vs {out}"
 

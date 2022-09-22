@@ -1,5 +1,5 @@
 module sevenseg (
-	input   logic [3:0] data,
+  input   logic [3:0] data,
   output  logic [6:0] segments
 );
 

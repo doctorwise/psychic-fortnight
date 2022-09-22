@@ -1,1 +1,1 @@
-../../../4_05_multiplexer/hdl/vhdl/mux2.hdl
+../../../4_05_multiplexer/hdl/vhdl/mux2.vhd

@@ -13,7 +13,8 @@ begin
   begin
     case data is -- can appear outside processes, so less of a reason to need
                  -- a process statement here to describe combinational logic
-      when X"0" => segments <= "1111110";
+      when X"0" =>
+        segments <= "1111110";
       when X"1" => segments <= "0110000";
       when X"2" => segments <= "1101101";
       when X"3" => segments <= "1111001";
@@ -23,7 +24,8 @@ begin
       when X"7" => segments <= "1110000";
       when X"8" => segments <= "1111111";
       when X"9" => segments <= "1110011";
-      when others => segments <= (others => '0');
+      when others => 
+	segments <= (others => '0');
     end case;
   end process;
 end;

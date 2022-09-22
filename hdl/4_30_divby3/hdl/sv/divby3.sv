@@ -29,6 +29,14 @@ module divby3 (
   // output logic
   assign y = (state == S0);
 
+
+
+
+
+
+
+
+
   `ifdef  COCOTB_SIM 
   initial
    begin

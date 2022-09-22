@@ -1,5 +1,5 @@
 $date
-  Mon Sep 19 22:48:06 2022
+  Tue Sep 20 14:45:35 2022
 $end
 $version
   GHDL v0
@@ -8,6 +8,8 @@ $timescale
   1 fs
 $end
 $scope module standard $end
+$upscope $end
+$scope module textio $end
 $upscope $end
 $scope module std_logic_1164 $end
 $upscope $end

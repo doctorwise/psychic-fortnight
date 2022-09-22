@@ -2,7 +2,7 @@ library IEEE; use IEEE.STD_LOGIC_1164.all;
 
 entity example is
 	port (
-		a, b, c:  in  STD_LOGIC;
+    a, b, c:  in  STD_LOGIC;
     y:        out STD_LOGIC
 	);
 end;

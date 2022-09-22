@@ -1,0 +1,39 @@
+$date
+	Thu Sep 22 03:27:17 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module mux2 $end
+$var wire 8 ! d0 [7:0] $end
+$upscope $end
+$scope module mux2 $end
+$var wire 8 " d1 [7:0] $end
+$upscope $end
+$scope module mux2 $end
+$var wire 1 # s $end
+$upscope $end
+$scope module mux2 $end
+$var wire 8 $ y [7:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 $
+1#
+b1000 "
+b11111100 !
+$end
+#2000
+b101111 $
+0#
+b1110001 "
+b101111 !
+#4000
+b11011001 $
+b11010111 "
+b11011001 !
+#6001

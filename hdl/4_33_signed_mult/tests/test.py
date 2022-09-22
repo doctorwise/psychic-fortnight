@@ -5,7 +5,7 @@ from cocotb.triggers import Timer
 from cocotb.types import LogicArray, Range
 
 @cocotb.test()
-async def test4_33_signed(dut):
+async def test4_33(dut):
 
     for aVal in range(-(2**3), 2**3, 1):
         for bVal in range(-(2**3), 2**3, 1):

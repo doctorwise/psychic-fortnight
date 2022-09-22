@@ -1,0 +1,141 @@
+$date
+	Thu Sep 22 03:27:23 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module mux4_12 $end
+$scope module lowmux $end
+$var wire 12 ! d0 [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module lowmux $end
+$var wire 12 " d1 [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module lowmux $end
+$var wire 1 # s $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module lowmux $end
+$var wire 12 $ y [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module himux $end
+$var wire 12 % d0 [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module himux $end
+$var wire 12 & d1 [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module himux $end
+$var wire 1 ' s $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module himux $end
+$var wire 12 ( y [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module outmux $end
+$var wire 12 ) d0 [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module outmux $end
+$var wire 12 * d1 [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module outmux $end
+$var wire 1 + s $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$scope module outmux $end
+$var wire 12 , y [11:0] $end
+$upscope $end
+$upscope $end
+$scope module mux4_12 $end
+$var wire 12 - d0 [11:0] $end
+$upscope $end
+$scope module mux4_12 $end
+$var wire 12 . d1 [11:0] $end
+$upscope $end
+$scope module mux4_12 $end
+$var wire 12 / d2 [11:0] $end
+$upscope $end
+$scope module mux4_12 $end
+$var wire 12 0 d3 [11:0] $end
+$upscope $end
+$scope module mux4_12 $end
+$var wire 2 1 s [1:0] $end
+$upscope $end
+$scope module mux4_12 $end
+$var wire 12 2 y [11:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 2
+b0 1
+b100 0
+b11 /
+b10 .
+b1 -
+b1 ,
+0+
+b11 *
+b1 )
+b11 (
+0'
+b100 &
+b11 %
+b1 $
+0#
+b10 "
+b1 !
+$end
+#2000
+b10 ,
+b10 2
+b10 $
+b10 )
+b100 (
+b100 *
+1#
+1'
+b1 1
+#4000
+b1 $
+b1 )
+b11 (
+b11 *
+b11 ,
+b11 2
+0#
+0'
+1+
+b10 1
+#6000
+b100 ,
+b100 2
+b10 $
+b10 )
+b100 (
+b100 *
+1#
+1'
+b11 1
+#8001

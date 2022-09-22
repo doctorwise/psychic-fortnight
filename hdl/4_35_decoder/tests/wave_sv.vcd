@@ -1,0 +1,43 @@
+$date
+	Thu Sep 22 03:42:39 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module decoder $end
+$var wire 3 ! a [2:0] $end
+$upscope $end
+$scope module decoder $end
+$var reg 8 " y [7:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 "
+b0 !
+$end
+#2000
+b10 "
+b1 !
+#4000
+b100 "
+b10 !
+#6000
+b1000 "
+b11 !
+#8000
+b10000 "
+b100 !
+#10000
+b100000 "
+b101 !
+#12000
+b1000000 "
+b110 !
+#14000
+b10000000 "
+b111 !
+#16001

@@ -43,8 +43,30 @@ sudo apt install ghdl iverilog gtkwave x11-apps
 
 ### Running tests
 
+To run all the tests, simply run
 
-### A note on X11 forwarding (if you run remote, but want GUIs)
+```
+./runAllTests.sh
+```
+
+This may take a while, but it will produce new `.vcd` files in the `tests`
+sub-directory of each example that you can view with GTKWave (there should
+have been some from the last time I ran in the directory you've downloaded /
+cloned if you want to go ahead and view). When it finishes, you should be 
+able to see whether the individual tests passed or failed.
+
+### Viewing wave files in GTKWave
+
+To view a wave file in GTKWave, do something like the following:
+
+```
+# assume we start from psychic-fortnight's home directory
+cd hdl/4_32_mealy/tests
+gtkwave wave_sv.vcd # to view the wave file generated while testing the Verilog
+gtkwave wave_vhdl.vcd # to view the wave file generated while testing the VHDL
+```
+
+#### A note on X11 forwarding (if you run remote, but want GUIs)
 
 Note that above, I installed x11-tools so that you can test out your X11 
 forwarding if you are on a remote machine / instance. At this point,

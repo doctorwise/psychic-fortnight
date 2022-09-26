@@ -46,6 +46,7 @@ To get install prerequisites, run
 ```
 sudo apt update # if you haven't already
 sudo apt install -y ghdl iverilog gtkwave x11-apps
+sudo python3 -m pip install cocotb
 ```
 
 ### Running tests

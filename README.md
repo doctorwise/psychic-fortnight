@@ -55,6 +55,59 @@ have been some from the last time I ran in the directory you've downloaded /
 cloned if you want to go ahead and view). When it finishes, you should be 
 able to see whether the individual tests passed or failed.
 
+#### Running individual tests
+
+If you want to run an individual test, navigate to the tests directory of the
+module you care about and type `make`. For example, execute
+
+```
+cd hdl/4_32_mealy/tests
+make
+```
+
+to run the test for the Mealy machine example from 4_32 of the text.
+
+### Writing your own modules
+
+Let's walk through an example of how to do write and test your own modules in
+SystemVerilog and VHDL using our `psychic-fortnight` framework. 
+
+1. Let's say we want to write and test a module called `controller` that can be
+implemented using a Moore machine. Let's copy the Moore machine example to 
+a new directory and we'll change that to suit our interests.
+
+```
+cd hdl # assume we started from psychic-fortnight's home directory
+cp -r 4_31_moore controller # make a new directory called controller that is a copy of 4_31_moore
+```
+
+As a sanity check, let's make sure the tests still run in the copied version.
+
+```
+cd controller/tests
+make
+```
+
+You should see several instances of the word `PASS` and be very happy inside.
+
+2. Now, let's change things so that when we type `make` to run our tests,
+our test framework looks for the `controller` module instead of the `moore`
+module within the `4_31_moore` example. This is easy. Open `TOPLEVEL.txt`
+from the `tests` directory and replace the word `moore` with the name of your
+top level module that will be the device under test (DUT). That is, change
+`moore` to `controller`.
+
+If you type `make` now (to run the tests), you'll see errors like the following:
+```
+...
+error: Unable to find the root module "controller" in the Verilog source.
+...
+/usr/bin/ghdl-mcode:error: cannot find entity or configuration controller
+...
+``` 
+This is a good thing. It just means we need to go change things so that we 
+actually have a top-level module named `controller`.
+
 ### Viewing wave files in GTKWave
 
 To view a wave file in GTKWave, do something like the following:
@@ -65,11 +118,10 @@ cd hdl/4_32_mealy/tests
 gtkwave wave_sv.vcd # to view the wave file generated while testing the Verilog
 gtkwave wave_vhdl.vcd # to view the wave file generated while testing the VHDL
 ```
-
 #### A note on X11 forwarding (if you run remote, but want GUIs)
 
-Note that above, I installed x11-tools so that you can test out your X11 
-forwarding if you are on a remote machine / instance. At this point,
+In the prereq stuff above we installed `x11-tools` so that you can test out your
+X11 forwarding if you are on a remote machine / instance. If you did that,
 you should be able to type and run `xeyes` from the command line and see 
 a lovely pair of comical eyes following your cursor as you move it around
 the screen. Not creepy at all... If you don't see this and you are ssh'ed into
@@ -99,3 +151,4 @@ sudo systemctl restart sshd
 
 Log out, log back in, and try to run `xeyes` again (you may not even have
 to log out, actually).  
+

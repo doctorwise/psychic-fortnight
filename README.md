@@ -90,7 +90,7 @@ make
 
 You should see several instances of the word `PASS` and be very happy inside.
 
-2. Now, let's change things so that when we type `make` to run our tests,
+2. item 2 para 1: Now, let's change things so that when we type `make` to run our tests,
 our test framework looks for the `controller` module instead of the `moore`
 module within the `4_31_moore` example. This is easy. Open `TOPLEVEL.txt`
 from the `tests` directory and replace the word `moore` with the name of your
@@ -104,7 +104,7 @@ error: Unable to find the root module "controller" in the Verilog source.
 /usr/bin/ghdl-mcode:error: cannot find entity or configuration controller
 ...
 ``` 
-> This is a good thing. It just means we need to go change things so that we 
+item 2 para 2: This is a good thing. It just means we need to go change things so that we 
 actually have a top-level module named `controller`.
 
 3. Let's add a SystemVerilog and VHDL implementation for the `controller`

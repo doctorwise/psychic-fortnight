@@ -104,7 +104,7 @@ error: Unable to find the root module "controller" in the Verilog source.
 /usr/bin/ghdl-mcode:error: cannot find entity or configuration controller
 ...
 ``` 
-This is a good thing. It just means we need to go change things so that we 
+> This is a good thing. It just means we need to go change things so that we 
 actually have a top-level module named `controller`.
 
 3. Let's add a SystemVerilog and VHDL implementation for the `controller`
@@ -119,7 +119,7 @@ the `controller` module in each language.
 cd ../hdl/sv # move to the Verilog source directory
 mv moore.sv controller.sv # note that filename is really irrelevant
 ```
-Now open the file controller.sv in the editor of your choice and change 
+> Now open the file controller.sv in the editor of your choice and change 
 all instances of the word `moore` to `controller`. That leaves us with a
 valid SystemVerilog implementation corresponding to the test in
 `controller/tests/test.py` that we can then modify to match our requirements.

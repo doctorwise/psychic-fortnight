@@ -18,7 +18,7 @@ etc.):
 
 ```
 sudo apt update
-sudo apt install -y build-essential python3 python3-pip
+sudo apt install -y build-essential git python3 python3-pip
 ```
 
 After this, you can clone things using 

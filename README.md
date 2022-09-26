@@ -18,7 +18,14 @@ etc.):
 
 ```
 sudo apt update
-sudo apt install -y build-essential python3 python3-pip
+sudo apt install -y build-essential git python3 python3-pip
+```
+
+After this, you can clone things using 
+
+```
+git clone https://github.com/doctorwise/psychic-fortnight.git
+cd psychic-fortnight
 ```
 
 ## ARM (coming soon)
@@ -38,7 +45,8 @@ To get install prerequisites, run
 
 ```
 sudo apt update # if you haven't already
-sudo apt install ghdl iverilog gtkwave x11-apps
+sudo apt install -y ghdl iverilog gtkwave x11-apps
+sudo python3 -m pip install cocotb
 ```
 
 ### Running tests

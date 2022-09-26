@@ -21,6 +21,13 @@ sudo apt update
 sudo apt install -y build-essential python3 python3-pip
 ```
 
+After this, you can clone things using 
+
+```
+git clone https://github.com/doctorwise/psychic-fortnight.git
+cd psychic-fortnight
+```
+
 ## ARM (coming soon)
 
 Check back here for updates as soon as we get to this portion of the course.

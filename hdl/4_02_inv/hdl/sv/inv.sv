@@ -10,4 +10,17 @@ module inv (
 
   assign y = ~a;
 
+  `ifdef  COCOTB_SIM 
+  initial
+   begin
+      $dumpfile("wave_sv.vcd");
+      $dumpvars(
+        0,
+        a,
+        y
+      );
+      #5;
+   end
+  `endif
+
 endmodule

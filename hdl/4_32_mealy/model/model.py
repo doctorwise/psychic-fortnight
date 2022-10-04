@@ -12,4 +12,4 @@ class model:
         else:
             self.state = 1
     def output(self, a):
-        return int(a == 1 and self.state == 2)
+        return int(a == 1 and self.state == 1)

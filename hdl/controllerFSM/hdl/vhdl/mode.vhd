@@ -1,0 +1,1 @@
+../../../mode/hdl/vhdl/mode.vhd

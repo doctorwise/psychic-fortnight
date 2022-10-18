@@ -1,0 +1,61 @@
+$date
+	Tue Oct 18 04:44:57 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module lights $end
+$var wire 1 ! clk $end
+$upscope $end
+$scope module lights $end
+$var wire 1 " reset $end
+$upscope $end
+$scope module lights $end
+$var wire 1 # ta $end
+$upscope $end
+$scope module lights $end
+$var wire 1 $ tb $end
+$upscope $end
+$scope module lights $end
+$var wire 1 % m $end
+$upscope $end
+$scope module lights $end
+$var reg 3 & la [2:0] $end
+$upscope $end
+$scope module lights $end
+$var reg 3 ' lb [2:0] $end
+$upscope $end
+$scope module lights $end
+$var reg 2 ( state [1:0] $end
+$upscope $end
+$scope module lights $end
+$var reg 2 ) nextstate [1:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 )
+b0 (
+b100 '
+b1 &
+z%
+z$
+z#
+z"
+1!
+$end
+#5000000
+b1 )
+0%
+0$
+0#
+1"
+0!
+#10000000
+1!
+#15000000
+0!
+#15000001

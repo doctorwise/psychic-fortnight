@@ -1,0 +1,45 @@
+$date
+  Tue Oct 18 04:44:59 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module lights $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var reg 1 # ta $end
+$var reg 1 $ tb $end
+$var reg 1 % m $end
+$var reg 3 & la[2:0] $end
+$var reg 3 ' lb[2:0] $end
+$comment state is not handled $end
+$comment nextstate is not handled $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+U"
+U#
+U$
+U%
+b001 &
+b100 '
+#5000000000
+0!
+1"
+0#
+0$
+0%
+#10000000000
+1!
+#15000000000
+0!

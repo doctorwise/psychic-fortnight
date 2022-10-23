@@ -17,7 +17,6 @@ async def test4_31(dut):
     dut.reset.value = 1;
     dut.p.value = 0;
     dut.r.value = 0;
-    fsm.reset()
 
     # are these test cases exhaustive? (nope... probably should be)
     pValues = [0, 1, 1, 0]

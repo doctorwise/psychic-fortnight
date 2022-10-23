@@ -9,7 +9,7 @@ module controller (
   output  logic [2:0] lb
 );
 
-logic [3:0] m;
+logic m;
 
 mode modeFSM (
   clk,

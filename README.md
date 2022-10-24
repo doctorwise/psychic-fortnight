@@ -30,7 +30,18 @@ cd psychic-fortnight
 
 ## ARM (coming soon)
 
-Check back here for updates as soon as we get to this portion of the course.
+To get started with ARM, simply run `setup.sh` found in `psychic-fortnight/arm`.
+This will install the QEMU simulator and appropriate GCC versions so that one 
+can create executables and simulate their execution whether or not you're actually
+on an ARM platform. Nifty! 
+
+I have a few examples currently in the directory, most notably 6_8_memory. 
+In this example, I have an example of how to use the `gdb-multiarch` debugger
+connected to an ARM program executing in the `qemu-arm` simulator. To run this,
+in one terminal type `make a=1 b=2 run-qemu` and in another type `make gdb` and
+you will be off to the races. For that example, I already put a breakpoint in
+to pause at the start of `main`'s execution as well as when the `sum` function
+from `asm/sum.s` gets called.
 
 ## HDL  
 

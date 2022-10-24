@@ -1,4 +1,5 @@
   .global sum
+  .type sum, %function
 sum:
-  add w0, w0, w1
-  ret
+  add r0, r0, r1
+  mov pc, lr

@@ -2,4 +2,5 @@
 
 # stolen shamelessly
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y qemu-user qemu-user-static gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu binutils-aarch64-linux-gnu-dbg build-essential
+sudo apt install -y qemu-user qemu-user-static gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu binutils-aarch64-linux-gnu-dbg
+sudo apt install -y gcc-arm-linux-gnueabihf gdb-multiarch

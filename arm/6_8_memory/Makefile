@@ -12,7 +12,6 @@ executable: src/main.c asm/sum.s
 
 run: executable
 	bin/main ${a} ${b}
-	@# @qemu-aarch64 -L /usr/aarch64-linux-gnu bin/main ${a} ${b}
 
 ref-executable: src/main.c src/sum.c
 	@mkdir -p bin
@@ -26,7 +25,6 @@ ref-asm: src/sum.c
 
 ref-run: ref-executable
 	bin/ref-main ${a} ${b}
-	@# @qemu-aarch64 -L /usr/aarch64-linux-gnu bin/ref-main ${a} ${b}
 
 clean:
 	@rm -rf bin obj ref-asm

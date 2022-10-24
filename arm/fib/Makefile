@@ -4,12 +4,13 @@ ARMCC=arm-linux-gnueabihf-gcc -gstabs+
 
 all: executable ref-asm asm
 
-executable: src/main.c asm/recursive_fib.s asm/iterative_fib.s src/ref_fib.c ref-asm
+executable: src/main.c asm/recursive_fib.s asm/iterative_fib.s src/ref_fib.c src/ref_fibonacci_array.c ref-asm
 	mkdir -p bin
 	mkdir -p obj
 	${ARMCC} -Iinclude -O4 -static -c -o obj/recursive_fib.o asm/recursive_fib.s
 	${ARMCC} -Iinclude -O4 -static -c -o obj/iterative_fib.o asm/iterative_fib.s
-	${ARMCC} -Iinclude -O4 -static -o bin/main src/main.c src/ref_fib.c obj/recursive_fib.o obj/iterative_fib.o
+	${ARMCC} -Iinclude -O4 -static -c -o obj/fibonacci_array.o asm/fibonacci_array.s
+	${ARMCC} -Iinclude -O4 -static -o bin/main src/main.c src/ref_fib.c src/ref_fibonacci_array.c obj/recursive_fib.o obj/iterative_fib.o obj/fibonacci_array.o
 
 run-test: executable
 	bin/main ${a} ${b}

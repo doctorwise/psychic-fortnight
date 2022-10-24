@@ -28,7 +28,7 @@ git clone https://github.com/doctorwise/psychic-fortnight.git
 cd psychic-fortnight
 ```
 
-## ARM (coming soon)
+## ARM
 
 To get started with ARM, simply run `setup.sh` found in `psychic-fortnight/arm`.
 This will install the QEMU simulator and appropriate GCC versions so that one 

@@ -1,8 +1,7 @@
 #include <ref_fib.h>
 
 // Recursive version
-/*
-int ref_fib(int n) {
+int ref_recursive_fib(int n) {
   // pathological or base cases
   if (n < -1) {
     return 0;
@@ -15,11 +14,10 @@ int ref_fib(int n) {
   }
 
   // inductive cases
-  return ref_fib(n - 1) + ref_fib(n - 2);
+  return ref_recursive_fib(n - 1) + ref_recursive_fib(n - 2);
 }
-*/
 
-int ref_fib(int n) {
+int ref_iterative_fib(int n) {
   if (n < -1) {
     return 0;
   }

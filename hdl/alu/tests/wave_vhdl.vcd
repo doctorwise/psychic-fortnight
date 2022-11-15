@@ -1,0 +1,56 @@
+$date
+  Mon Nov 14 19:13:53 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std_unsigned $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module alu $end
+$var reg 32 ! a[31:0] $end
+$var reg 32 " b[31:0] $end
+$var reg 2 # alucontrol[1:0] $end
+$var reg 32 $ result[31:0] $end
+$var reg 4 % aluflags[3:0] $end
+$var reg 1 & neg $end
+$var reg 1 ' zero $end
+$var reg 1 ( carry $end
+$var reg 1 ) overflow $end
+$var reg 32 * condinvb[31:0] $end
+$var reg 33 + sum[32:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+b00000000000000000000000000001100 !
+b00000000000000000000000000100010 "
+b00 #
+b00000000000000000000000000101110 $
+b0000 %
+0&
+0'
+0(
+0)
+b00000000000000000000000000100010 *
+b000000000000000000000000000101110 +
+#5000000
+b11111111111111111111111111111111 !
+b11111111111111111111111111111111 "
+b01 #
+b00000000000000000000000000000000 $
+b0110 %
+1'
+1(
+b00000000000000000000000000000000 *
+b100000000000000000000000000000000 +
+#10000000

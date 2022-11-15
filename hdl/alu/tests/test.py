@@ -9,71 +9,71 @@ from random import randrange
 @cocotb.test()
 async def test_alu(dut):
 
-    # case 1: nonpathological addition
+    aValues = [ \
+        LogicArray(12, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0xffffffff, Range(31, 'downto', 0)), \
+        LogicArray(12, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0xffffffff, Range(31, 'downto', 0)), \
+        LogicArray(12, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0xffffffff, Range(31, 'downto', 0)), \
+        LogicArray(12, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0xffffffff, Range(31, 'downto', 0)), \
+    ]
 
-    a = LogicArray(12, Range(31, 'downto', 0))
-    b = LogicArray(34, Range(31, 'downto', 0))
-    alucontrol = LogicArray("00", Range(1, 'downto', 0))
+    bValues = [ \
+        LogicArray(34, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0x00101001, Range(31, 'downto', 0)), \
+        LogicArray(34, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0x00101001, Range(31, 'downto', 0)), \
+        LogicArray(34, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0x00101001, Range(31, 'downto', 0)), \
+        LogicArray(34, Range(31, 'downto', 0)), \
+        LogicArray(0x7fffffff, Range(31, 'downto', 0)), \
+        LogicArray(0x00101001, Range(31, 'downto', 0)), \
+    ]
 
-    dut.a.value = a
-    dut.b.value = b
-    dut.alucontrol.value = alucontrol
+    alucontrolValues = [ \
+        LogicArray("00", Range(1, 'downto', 0)), \
+        LogicArray("00", Range(1, 'downto', 0)), \
+        LogicArray("00", Range(1, 'downto', 0)), \
+        LogicArray("01", Range(1, 'downto', 0)), \
+        LogicArray("01", Range(1, 'downto', 0)), \
+        LogicArray("01", Range(1, 'downto', 0)), \
+        LogicArray("10", Range(1, 'downto', 0)), \
+        LogicArray("10", Range(1, 'downto', 0)), \
+        LogicArray("10", Range(1, 'downto', 0)), \
+        LogicArray("11", Range(1, 'downto', 0)), \
+        LogicArray("11", Range(1, 'downto', 0)), \
+        LogicArray("11", Range(1, 'downto', 0)), \
+    ]
 
-    await Timer(5, units="ns")
+    for idx in range(len(aValues)):
 
-    [result, aluflags] = model.alu(a, b, alucontrol)
+        a = aValues[idx]
+        b = bValues[idx]
+        alucontrol = alucontrolValues[idx]
 
-    print(f"{result}, {aluflags}")
+        dut.a.value = a
+        dut.b.value = b
+        dut.alucontrol.value = alucontrol
 
-    print(f"{dut.result.value}, {dut.aluflags.value}")
+        await Timer(5, units="ns")
 
-    ref = LogicArray(result, Range(31, 'downto', 0))
-    calc = LogicArray(dut.result.value, Range(31, 'downto', 0))
+        [result, aluflags] = model.alu(a, b, alucontrol)
 
-    assert ref == calc, f"Result: {calc} (HDL) vs. {ref} (model)"
+        ref = LogicArray(result, Range(31, 'downto', 0))
+        calc = LogicArray(dut.result.value, Range(31, 'downto', 0))
 
-    ref = LogicArray(aluflags, Range(3, 'downto', 0))
-    calc = LogicArray(dut.aluflags.value, Range(3, 'downto', 0))
+        assert ref == calc, f"Result: {calc} (HDL) vs. {ref} (model)"
 
-    assert ref == calc, f"ALUFlags: {calc} (HDL) vs. {ref} (model)"
-    
-    # case 1: overflowing addition
+        ref = LogicArray(aluflags, Range(3, 'downto', 0))
+        calc = LogicArray(dut.aluflags.value, Range(3, 'downto', 0))
 
-    a = LogicArray(0xffffffff, Range(31, 'downto', 0))
-    b = LogicArray(0xffffffff, Range(31, 'downto', 0))
-    alucontrol = LogicArray("01", Range(1, 'downto', 0))
-
-    dut.a.value = a
-    dut.b.value = b
-    dut.alucontrol.value = alucontrol
-
-    await Timer(5, units="ns")
-
-    [result, aluflags] = model.alu(a, b, alucontrol)
-
-    print(f"{result}, {aluflags}")
-
-    print(f"{dut.result.value}, {dut.aluflags.value}")
-
-    ref = LogicArray(result, Range(31, 'downto', 0))
-    calc = LogicArray(dut.result.value, Range(31, 'downto', 0))
-
-    assert ref == calc, f"Result: {calc} (HDL) vs. {ref} (model)"
-
-    ref = LogicArray(aluflags, Range(3, 'downto', 0))
-    calc = LogicArray(dut.aluflags.value, Range(3, 'downto', 0))
-
-    assert ref == calc, f"ALUFlags: {calc} (HDL) vs. {ref} (model)"
-
-    """
-    for numIter in range(10):
-        instr = LogicArray(randrange(2**31), Range(31, ''downto'', 0))
-        print(f'{instr}')
-        dut.instr.value = instr
-        
-        for immsrc in range(3):
-            dut.immsrc.value = LogicArray(immsrc, Range(1, ''downto'', 0))
-            await Timer(1, units="ns")
-            assert LogicArray(dut.extimm.value, Range(31, ''downto'', 0)) == LogicArray(model(dut.immsrc.value, dut.instr.value), Range(31, ''downto'', 0)), \
-                f"{instr}, {immsrc}: {dut.extimm.value} vs {model(dut.immsrc.value, dut.instr.value)}"
-    """
+        assert ref == calc, f"ALUFlags: {calc} (HDL) vs. {ref} (model)"

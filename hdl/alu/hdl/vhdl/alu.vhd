@@ -1,4 +1,5 @@
 library IEEE; use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
 use IEEE.NUMERIC_STD_UNSIGNED.all;
 
 entity alu is
@@ -19,7 +20,7 @@ architecture behavioral of alu is
   signal sum      : STD_LOGIC_VECTOR(32 downto 0);
 begin
 
-  condinvb <= (not b) when (alucontrol(0) = '1') else b;
+  condinvb <= (not b) when (alucontrol(0)) else b;
   sum <= ('0' & a) + ('0' & condinvb) + ('0' & alucontrol(0));
 
   process (all)
@@ -39,7 +40,7 @@ begin
   end process;
 
   neg   <= result(31);
-  zero  <= '1' when (result = (31 downto 0 => '0')) else '0';
+  zero  <= '1' when (unsigned(result) = 0) else '0';
   carry <= ((not alucontrol(1)) and sum(32));
   overflow <= (not alucontrol(1)) and
                 (not ((a(31) xor  b(31)) xor alucontrol(0))) and

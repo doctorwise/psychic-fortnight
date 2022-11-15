@@ -8,11 +8,11 @@ def alu(a: LogicArray, b: LogicArray, alucontrol: LogicArray) -> [LogicArray, Lo
 
     ret0 = ret_sum
 
-    if (alucontrol[1] == 1):
-        if (alucontrol[0] == 0):
+    if (bool(alucontrol[1]) == True):
+        if (bool(alucontrol[0]) == False):
             ret0 = a & b
-        if (alucontrol[0] == 1):
-            ret1 = a | b
+        if (bool(alucontrol[0]) == True):
+            ret0 = a | b
 
     ret1 = LogicArray('zzzz', Range(3, 'downto', 0))
     ret1[3] = ret0[31]

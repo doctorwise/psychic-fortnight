@@ -5,3 +5,5 @@ asm/*
 *.o
 *.so
 *.os
+*.vcd
+*__pycache__*

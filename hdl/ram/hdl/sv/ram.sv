@@ -1,16 +1,16 @@
-module ram #(parameter N = 6, M = 32) (
-  input   logic               clk,
-  input   logic               we,
-  input   logic [N - 1:0]  adr,
-  input   logic [M - 1:0]     din,
-  output  logic [M - 1:0]     dout
+module ram (
+  input   logic            clk,
+  input   logic            we,
+  input   logic   [31:0]   a,
+  input   logic   [31:0]   wd,
+  output  logic   [31:0]   rd
 );
 
-  logic [M - 1:0] mem [2**N - 1:0];
+  logic [31:0] mem [63:0];
 
   always_ff @(posedge clk)
-    if (we) mem[adr] <= din;
+    if (we) mem[a[7:2]] <= wd;
 
-  assign dout = mem[adr];
+  assign rd = mem[a[7:2]];
 
 endmodule

@@ -1,41 +1,47 @@
-from model import *
+import model
 
 import cocotb
 from cocotb.clock import Clock
+from cocotb.triggers import Timer
 from cocotb.triggers import FallingEdge
+from cocotb.types import Logic, LogicArray, Range
 
 @cocotb.test()
 async def testRAM(dut):
 
-    writeEnable = Logic('1')
-    writeDisable = Logic('0')
-    addressToSet = LogicArray(12, Range(5, 'downto', 0))
-    valueToSet = LogicArray( \
-        '10010101101011010010011101101011', \
-        Range(31, 'downto', 0) \
-    )
+    enable = 1
+    disable = 0
+    zero = LogicArray(0, Range(31, 'downto', 0))
 
     clock = Clock(dut.clk, 10, units="us")  # Create a 10us period clock on port clk
     cocotb.start_soon(clock.start())  # Start the clock
   
-    ram = RAM()
+    ram = model.ram()
 
+    # initialize ram to zeros, writing a single value on each clock
+    for idx in range(64): 
+        await FallingEdge(dut.clk)
+        
+        addressToSet = LogicArray(idx, Range(31, 'downto', 0))
+        valueToSet = zero;
+
+        dut.we.value = enable
+        dut.a.value = addressToSet
+        dut.wd.value = valueToSet
+        ram.write(enable, addressToSet, valueToSet)
+
+    # disable writes
     await FallingEdge(dut.clk)
-
-    dut.we.value = writeEnable
-    dut.adr.value = addressToSet
-    dut.din.value = valueToSet
+    dut.we.value = disable
     
-    ram.write(writeEnable, addressToSet, valueToSet)
-
+    # note that reads are not clock synchronous
     await FallingEdge(dut.clk)
-    assert LogicArray(dut.dout.value) == ram.read(addressToSet), "{dut.dout.value} vs. {ram.read(addressToSet)}"
+    # check ram is uniformly filled with zeros
+    for idx in range(64): 
+        addressToRead = LogicArray(idx, Range(31, 'downto', 0))
+        dut.a.value = addressToSet
+        await Timer(1, units="ns")
+        readValue = LogicArray(dut.rd.value, Range(31, 'downto', 0))
+        refReadValue = ram.read(addressToRead)
+        assert readValue == refReadValue, 'ERROR: {readValue} vs {refReadValue}'
 
-    dut.we.value = writeDisable    
-    dut.adr.value = addressToSet
-    dut.din.value = LogicArray(0, Range(31, 'downto', 0))
-    
-    ram.write(writeDisable, addressToSet, valueToSet)
-
-    await FallingEdge(dut.clk)
-    assert LogicArray(dut.dout.value) == ram.read(addressToSet), "{dut.dout.value} vs. {ram.read(addressToSet)}"
